@@ -208,6 +208,13 @@ function make_slides(f) {
     }
   });
 
+  slides.last_reminder = slide({
+    name : "last_reminder",
+    button : function() {
+      exp.go(); //use exp.go() if and only if there is no "present" data.
+    }
+  });
+  
   slides.one_slider = slide({
     name : "one_slider",
 
@@ -312,7 +319,7 @@ function init() {
       screenUW: exp.width
     };
   //blocks of the experiment:
-  exp.structure=["i0", "instructions", "practice_slider", "post_practice_1", "practice_slider_bad", "post_practice_2", "one_slider", 'subj_info', 'thanks'];
+  exp.structure=["i0", "instructions", "practice_slider", "post_practice_1", "practice_slider_bad", "post_practice_2", "last_reminder", "one_slider", 'subj_info', 'thanks'];
 
   exp.data_trials = [];
   //make corresponding slides:
