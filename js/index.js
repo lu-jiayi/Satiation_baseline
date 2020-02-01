@@ -180,7 +180,7 @@ function make_slides(f) {
     //this gets run only at the beginning of the block
     present_handle : function(stim) {
       $(".err").hide();
-      $(".prompt").html("Context: The girl slept under the bed. <p>  Target: <b> Who was the bed slept under? <\/b>");
+      $(".prompt").html("Context: The girl slept under the bed. <p>  Target: <b> Who the bed was slept under? <\/b>");
       this.init_sliders();
       exp.sliderPost = null; //erase current slider value
     },
@@ -214,7 +214,7 @@ function make_slides(f) {
       exp.go(); //use exp.go() if and only if there is no "present" data.
     }
   });
-  
+
   slides.one_slider = slide({
     name : "one_slider",
 
