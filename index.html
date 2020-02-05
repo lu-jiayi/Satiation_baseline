@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <title>Stanford Department of Linguistics</title>
 
@@ -49,17 +48,21 @@ $(function(){
   <noscript>This task requires JavaScript.</noscript>
 
   <div class="slide" id="i0" >
+    <br>
+    <br>
+
     <p id="cocolab">Stanford Linguistics</p>
     <p id="instruct-text">You will see some stuff and be asked some questions. The HIT should take ~20 minutes. Please pay attention, thanks!</p>
-    <i><small><small><strong><br>LEGAL INFORMATION</strong>:<br><br>We invite you to participate in a research study on language production and comprehension.<br>Your experimenter will ask you to do a linguistic task such as reading sentences or words, naming pictures or describing scenes, making up sentences of your own, or participating in a simple language game.<br><br>You will be paid for your participation at the posted rate.<br><br>There are no risks or benefits of any kind involved in this study.<br><br>If you have read this form and have decided to participate in this experiment, please understand your participation is voluntary and you have the right to withdraw your consent or discontinue participation at any time without penalty or loss of benefits to which you are otherwise entitled. You have the right to refuse to do particular tasks. Your individual privacy will be maintained in all published and written data resulting from the study.<br>You may print this form for your records.<br><br>CONTACT INFORMATION:<br>If you have any questions, concerns or complaints about this research study, its procedures, risks and benefits, you should contact the Protocol Director Meghan Sumner at <br>(650)-725-9336<br><br>If you are not satisfied with how this study is being conducted, or if you have any concerns, complaints, or general questions about the research or your rights as a participant, please contact the Stanford Institutional Review Board (IRB) to speak to someone independent of the research team at (650)-723-2480 or toll free at 1-866-680-2906. You can also write to the Stanford IRB, Stanford University, 3000 El Camino Real, Five Palo Alto Square, 4th Floor, Palo Alto, CA 94306 USA.<br><br>If you agree to participate, please proceed to the study tasks.<br><br></small></small></i>
     <button id="start_button" type="button">Start Experiment</button>
+    <p></p>
+    <i><small><small><strong><br>LEGAL INFORMATION</strong>:<br><br>We invite you to participate in a research study on language production and comprehension.<br>Your experimenter will ask you to do a linguistic task such as reading sentences or words, naming pictures or describing scenes, making up sentences of your own, or participating in a simple language game.<br>You will be paid for your participation at the posted rate.<br>There are no risks or benefits of any kind involved in this study.<br>If you have read this form and have decided to participate in this experiment, please understand your participation is voluntary and you have the right to withdraw your consent or discontinue participation at any time without penalty or loss of benefits to which you are otherwise entitled. You have the right to refuse to do particular tasks. Your individual privacy will be maintained in all published and written data resulting from the study.<br>You may print this form for your records.<br><br>CONTACT INFORMATION:<br>If you have any questions, concerns or complaints about this research study, its procedures, risks and benefits, you should contact the Protocol Director Meghan Sumner at <br>(650)-725-9336<br><br>If you are not satisfied with how this study is being conducted, or if you have any concerns, complaints, or general questions about the research or your rights as a participant, please contact the Stanford Institutional Review Board (IRB) to speak to someone independent of the research team at (650)-723-2480 or toll free at 1-866-680-2906. You can also write to the Stanford IRB, Stanford University, 3000 El Camino Real, Five Palo Alto Square, 4th Floor, Palo Alto, CA 94306 USA.<br><br>If you agree to participate, please proceed to the study tasks.<br><br></small></small></i>
   </div>
 
-<!--Consent form used in Stanford linguistics department and is good for ling245.
-Otherwise, modified to whatever is required for you given your affiliation.
--->
 
 <div class="slide" id="instructions">
+  <br>
+    <br>
+
   <h3>Instructions</h3>
   <p>In this experiment, you will be reading some English sentences and rating how acceptable they sound. There will be a context sentence and a target sentence on each page. Your job is to read the context sentence first, and then rate the acceptability of the <b>TARGET</b> sentence.</p>
   <p>When rating the sentences, please use your <b>intuition rather than school grammar</b>. The sentence <i>"Who did you go to school with?"</i> is considered bad according to school grammar (because of the stranded preposition <i>with</i>. However, most English speakers find it totally acceptable. If you think the sentence is acceptable, you should give it a high rating regardless of what you learned in school.</p>
@@ -75,38 +78,64 @@ Otherwise, modified to whatever is required for you given your affiliation.
 </div>
 
   <div class="slide" id="practice_slider">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
     <p>Let's try one practice item. Please read the context sentence, and then rate the acceptability of the target sentence. Please indicate how acceptable the target sentence sounds by dragging the slide bar.</p>
     <p class="prompt"> </p>
-    <table id="slider_table1" class="slider_table">
-      <tr><td class="left">completely unacceptable</td><td class="right">completely acceptable</td></tr>
-      <tr><td colspan="2"><div id="practice_slider_1" class="slider"></div></td></tr>
+    <table id="slider_table" class="slider_table">
+      <tr><td class="left">completely unacceptable</td><td colspan="2"><div id="practice_slider_1" class="slider"></div></td><td class="right">completely acceptable</td></tr>
     </table>
     <button onclick="_s.button()">Continue</button>
     <div class="err">Please adjust the slider before continuing.</div>
   </div>
 
   <div class="slide" id="post_practice_1">
-    <p>Most English speakers find this sentence acceptable. If you think it is acceptable, you should give it a high rating by dragging the slider to the right.</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <p>Most English speakers find this sentence <b>acceptable</b>. If you think it is acceptable, you should give it a high rating by dragging the slider to the <b>right</b>.</p>
     <button onclick="_s.button()">Continue</button>
   </div>
 
   <div class="slide" id="practice_slider_bad">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
     <p>Let's try another practice item. Please read the context sentence, and then rate the acceptability of the target sentence. Please indicate how acceptable the target sentence sounds using the slider.</p>
     <p class="prompt"> </p>
-    <table id="slider_table2" class="slider_table">
-      <tr><td class="left">completely unacceptable</td><td class="right">completely acceptable</td></tr>
-      <tr><td colspan="2"><div id="practice_slider_2" class="slider"></div></td></tr>
+    <table id="slider_table" class="slider_table">
+      <tr><td class="left">completely unacceptable</td><td colspan="2"><div id="practice_slider_2" class="slider"></div></td><td class="right">completely acceptable</td></tr>
     </table>
     <button onclick="_s.button()">Continue</button>
     <div class="err">Please adjust the slider before continuing.</div>
   </div>
 
   <div class="slide" id="post_practice_2">
-    <p>Most English speakers find this sentence unacceptable. If you think it is unacceptable, you should give it a low rating by dragging the slider to the left.</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <p>Most English speakers find this sentence <b>unacceptable</b>. If you think it is unacceptable, you should give it a low rating by dragging the slider to the <b>left</b>.</p>
     <button onclick="_s.button()">Continue</button>
   </div>
 
   <div class="slide" id="last_reminder">
+    <br>
+    <br>
+    <br>
+
     <p>Before we start the experiment, there are a few things to keep in mind:</p>
     <p>(1) You may see sentences that are totally acceptable or unacceptable, and you may also see sentences that are somewhere in between. Please make use of the full scale when rating them.</p>
     <p>(2) Please use your intuition rather than school grammar to judge the acceptability of the target sentences.</p>
@@ -116,11 +145,15 @@ Otherwise, modified to whatever is required for you given your affiliation.
   </div>
 
   <div class="slide" id="one_slider">
-    <p>Please read the context sentence, and then rate how acceptable the target sentence is:</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
     <p class="prompt"> </p>
     <table id="slider_table" class="slider_table">
-      <tr><td class="left">completely unacceptable</td><td class="right">completely acceptable</td></tr>
-      <tr><td colspan="2"><div id="single_slider" class="slider"></div></td></tr>
+      <tr><td class="left">completely unacceptable</td><td colspan="2"><div id="single_slider" class="slider"></div></td><td class="right">completely acceptable</td></tr>
     </table>
     <button onclick="_s.button()">Continue</button>
     <div class="err">Please adjust the slider before continuing.</div>
