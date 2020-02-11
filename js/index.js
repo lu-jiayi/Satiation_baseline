@@ -69,6 +69,9 @@ block_13 = all_stimuli.filter(function (e) {
 block_14 = all_stimuli.filter(function (e) {
   return e.block == 14;
 });
+block_15 = all_stimuli.filter(function (e) {
+  return e.block == 15;
+});
 
 
 block_1 = shuffle(block_1);
@@ -85,8 +88,9 @@ block_11 = shuffle(block_11);
 block_12 = shuffle(block_12);
 block_13 = shuffle(block_13);
 block_14 = shuffle(block_14);
+block_14 = shuffle(block_15);
 
-shuffled_blocks = shuffle([block_1, block_2, block_3, block_4, block_5, block_6, block_7, block_8, block_9, block_10, block_11, block_12, block_13, block_14]);
+shuffled_blocks = shuffle([block_1, block_2, block_3, block_4, block_5, block_6, block_7, block_8, block_9, block_10, block_11, block_12, block_13, block_14, block_15]);
 
 for (var i = 0; i < 14; i++){
   for (var j in shuffled_blocks[i]){
