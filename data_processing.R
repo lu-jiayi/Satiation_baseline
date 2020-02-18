@@ -25,8 +25,8 @@ eligible_worker_f = filler_data_by_subject_eligible$Group.1
 data=subset(data, is.element(workerid, eligible_worker_f))
 #Step 3: Filter out the participants who responded >0.25 to ungrammatical controls
 ungram_control = subset(data, condition =="UNGRAM")
-to_be_removed = subset(ungram_control, response >=0.25)
-worker_to_be_removed = to_be_removed[,"workerid"]
+to_be_removed = subset(ungram_control, response >0.25)
+worker_to_be_removed = to_be_removed$workerid
 `%notin%` <- Negate(`%in%`)
 data = subset(data, workerid %notin% worker_to_be_removed)
 #Step 4: Response time filter
@@ -42,11 +42,11 @@ d <- read.csv("satiation_baseline_cleaned.csv")
 d$condition <- factor(d$condition, levels = c("FILL", "CNPC","SUBJ","WH"))
 
 #Step 3: Statistics
-model <- lmer(response~trial_sequence_total*condition + (1+trial_sequence_total*condition|workerid)+(1+condition|item_number), data = d)
+model <- lmer(response~block_sequence*condition + (1+block_sequence*condition|workerid)+(1|item_number), data = d)
 summary(model)
 
 
 #Step 4: Plot
-ggplot(d, aes(x=trial_sequence_total, y=response, color = condition, shape = condition)) + 
+ggplot(d, aes(x=block_sequence, y=response, color = condition, shape = condition)) + 
   geom_point() + 
   geom_smooth(method=lm, aes(fill=condition))
