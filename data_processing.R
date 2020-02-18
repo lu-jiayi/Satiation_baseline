@@ -40,13 +40,16 @@ d=transform(data, block_sequence = as.numeric(block_sequence))
 write.csv(d,"satiation_baseline_cleaned.csv", row.names = FALSE)
 d <- read.csv("satiation_baseline_cleaned.csv")
 d$condition <- factor(d$condition, levels = c("FILL", "CNPC","SUBJ","WH"))
+#Step 5.5: remove non-English speakers:
+non_Eng <- {}
+d = subset(d, workerid %notin% non_Eng)
+#Step 6: Statistics
+model_block <- lmer(response~block_sequence*condition + (1+block_sequence*condition|workerid)+(1+condition|item_number), data = d)
+summary(model_block)
+model_global <- lmer(response~trial_sequence_total*condition + (1+trial_sequence_total*condition|workerid)+(1+condition|item_number), data = d)
+summary(model_global)
 
-#Step 3: Statistics
-model <- lmer(response~block_sequence*condition + (1+block_sequence*condition|workerid)+(1|item_number), data = d)
-summary(model)
-
-
-#Step 4: Plot
+#Step 7: Plot
 ggplot(d, aes(x=block_sequence, y=response, color = condition, shape = condition)) + 
   geom_point() + 
   geom_smooth(method=lm, aes(fill=condition))
