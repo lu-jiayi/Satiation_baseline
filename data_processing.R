@@ -5,7 +5,7 @@ library(reshape)
 library(ggplot2)
 library(gtable)
 library(lme4)
-data<-read.csv("satiation_baseline_pilot-trials.csv")
+data<-read.csv("satiation_baseline-trials.csv")
 
 #Step 1: Filter out the participants who responded incorrectely to the practice questions:
 practice_good_data=subset(data,condition == "practice_good")
@@ -51,5 +51,9 @@ summary(model_global)
 
 #Step 7: Plot
 ggplot(d, aes(x=block_sequence, y=response, color = condition, shape = condition)) + 
+  geom_point() + 
+  geom_smooth(method=lm, aes(fill=condition))
+
+ggplot(d, aes(x=trial_sequence_total, y=response, color = condition, shape = condition)) + 
   geom_point() + 
   geom_smooth(method=lm, aes(fill=condition))
