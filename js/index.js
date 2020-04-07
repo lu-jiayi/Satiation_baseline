@@ -160,6 +160,7 @@ function make_slides(f) {
     //this gets run only at the beginning of the block
     present_handle : function(stim) {
       $(".err").hide();
+      $(".errgood").hide();
       this.stim = stim;
       $(".prompt").html("Context: The boy saw an apple on the table. <p>  Target: <b> What did the boy see on the table? <\/b>");
       this.init_sliders();
@@ -168,7 +169,11 @@ function make_slides(f) {
     button : function() {
       if (exp.sliderPost == null) {
         $(".err").show();
-      } else {
+      } 
+      else if (exp.sliderPost < 0.5) {
+        $(".errgood").show();
+      }
+      else {
         this.log_responses();
         /* use _stream.apply(this); if and only if there is
         "present" data. (and only *after* responses are logged) */
@@ -212,6 +217,7 @@ function make_slides(f) {
     //this gets run only at the beginning of the block
     present_handle : function(stim) {
       $(".err").hide();
+      $(".errbad").hide();
       $(".prompt").html("Context: The girl slept under the bed. <p>  Target: <b> Who the bed was slept under? <\/b>");
       this.init_sliders();
       exp.sliderPost = null; //erase current slider value
@@ -219,7 +225,11 @@ function make_slides(f) {
     button : function() {
       if (exp.sliderPost == null) {
         $(".err").show();
-      } else {
+      } 
+      else if (exp.sliderPost > 0.5) {
+        $(".errbad").show();
+      }
+      else {
         this.log_responses();
         /* use _stream.apply(this); if and only if there is
         "present" data. (and only *after* responses are logged) */
